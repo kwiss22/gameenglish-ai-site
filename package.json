@@ -1,0 +1,6 @@
+{
+  "name": "gameenglish-ai-site",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" }
+}
