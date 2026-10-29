@@ -11,7 +11,7 @@ supabase/schema.sql   Supabase 테이블 생성 SQL
 
 ## 1. Supabase 준비 (5분)
 
-1. supabase.com 에서 새 프로젝트 생성
+1. 기존 Supabase 프로젝트를 그대로 써도 됩니다 (모든 표 이름에 `ge_` 접두사가 붙어 겹치지 않음). 새로 만들어도 됩니다
 2. 왼쪽 메뉴 **SQL Editor** → `supabase/schema.sql` 내용 붙여넣기 → **Run**
 3. **Project Settings → API** 에서 두 값을 복사
    - `Project URL` → `SUPABASE_URL`
@@ -38,14 +38,14 @@ console.anthropic.com → API Keys 에서 키 발급 → `ANTHROPIC_API_KEY`
 ## 4. 상담 기록 확인
 
 Supabase → **Table Editor**
-- `inquiries` — AI가 정리한 문의 (이름, 연락처, 서비스 유형, 요약, 일정, 예산). `status`, `memo` 칸은 담당자가 직접 수정해서 관리
-- `conversations` — 모든 대화 원문 (연락처를 남기지 않은 방문자 포함)
-- `inquiry_overview` — 문의와 대화 원문을 한 줄에 같이 보는 뷰 (SQL Editor에서 `select * from inquiry_overview;`)
+- `ge_inquiries` — AI가 정리한 문의 (이름, 연락처, 서비스 유형, 요약, 일정, 예산). `status`, `memo` 칸은 담당자가 직접 수정해서 관리
+- `ge_conversations` — 모든 대화 원문 (연락처를 남기지 않은 방문자 포함)
+- `ge_inquiry_overview` — 문의와 대화 원문을 한 줄에 같이 보는 뷰 (SQL Editor에서 `select * from ge_inquiry_overview;`)
 
 ## 5. 바꾸고 싶을 때
 
 - **AI 말투·안내 내용·가격**: `api/chat.js` 의 `SYSTEM_PROMPT`
-- **AI가 수집하는 항목**: `api/chat.js` 의 `TOOLS` 와 `supabase/schema.sql` 의 `inquiries` 테이블을 같이 수정
+- **AI가 수집하는 항목**: `api/chat.js` 의 `TOOLS` 와 `supabase/schema.sql` 의 `ge_inquiries` 테이블을 같이 수정
 - **첫 인사말·빠른 질문 버튼**: `index.html` 하단 스크립트의 `GREETING`, `#quick` 버튼들
 - **빈칸**: `index.html` 에서 `[이메일]`, `[대표자명]`, `[000-00-00000]`, `[신고번호]`, `[사업장 주소]` 검색해서 교체
 
@@ -55,4 +55,4 @@ Supabase → **Table Editor**
 - 메시지 길이(2,000자)와 대화 길이(30개)를 서버에서 제한합니다.
 - 브라우저에는 어떤 키도 노출되지 않습니다. Supabase는 RLS가 켜져 있어 service_role 키 없이는 읽기·쓰기가 막혀 있습니다.
 - 공격적인 반복 호출을 막으려면 Vercel Firewall(Rate limiting) 규칙을 `/api/chat` 에 추가하는 것을 권장합니다.
-- 새 문의가 오면 바로 알림을 받고 싶다면 Supabase **Database Webhooks** 로 `inquiries` INSERT 시 이메일·슬랙으로 보내도록 연결할 수 있습니다.
+- 새 문의가 오면 바로 알림을 받고 싶다면 Supabase **Database Webhooks** 로 `ge_inquiries` INSERT 시 이메일·슬랙으로 보내도록 연결할 수 있습니다.

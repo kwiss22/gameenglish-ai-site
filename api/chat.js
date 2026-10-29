@@ -92,7 +92,7 @@ async function supabase(path, { method = 'POST', body, prefer } = {}) {
 }
 
 async function saveConversation(sessionId, messages, meta) {
-  await supabase('conversations?on_conflict=id', {
+  await supabase('ge_conversations?on_conflict=id', {
     body: {
       id: sessionId,
       messages,
@@ -106,7 +106,7 @@ async function saveConversation(sessionId, messages, meta) {
 
 async function saveInquiry(sessionId, input) {
   const clip = (v, n) => (typeof v === 'string' ? v.slice(0, n) : '');
-  await supabase('inquiries?on_conflict=conversation_id', {
+  await supabase('ge_inquiries?on_conflict=conversation_id', {
     body: {
       conversation_id: sessionId,
       name: clip(input.name, 200),
