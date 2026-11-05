@@ -100,6 +100,21 @@ section{scroll-margin-top:72px}
 .chain .step b{display:block;font-size:15px}.chain .step span{font-size:13px;color:var(--ink-3)}.chain .step span.live{color:var(--accent)}
 .chain .arr{font-size:18px;color:#8A8A8A}
 
+/* books */
+.bstats{display:flex;flex-wrap:wrap;gap:32px;margin-top:36px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.bstats>div{flex:1 1 160px}.bstats b{display:block;font-family:var(--display);font-size:32px}.bstats span{font-size:15px;color:var(--ink-3)}
+.bh{margin:48px 0 16px;font-size:20px;font-weight:700}
+.gal figure{margin:0}
+.gal img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:#fff}
+.gal figcaption{margin-top:8px;font-size:13px;color:var(--ink-3)}
+.gal-book{display:flex;flex-wrap:wrap;gap:20px}
+.gal-book .g-cover{flex:1 1 260px;max-width:340px}
+.gal-book .g-col{flex:999 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.gal-ws{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.g-more{display:flex;align-items:center;border:1px dashed var(--ink-3);border-radius:10px;padding:20px;background:var(--paper)}
+.g-more b{display:block;font-size:18px}.g-more span{display:block;margin:8px 0 16px;font-size:14px;line-height:1.6;color:var(--ink-2)}
+@media (max-width:760px){.gal-ws{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 /* process */
 .process{background:var(--dark);color:#fff}
 .process h2{color:#fff}
@@ -152,7 +167,7 @@ footer{border-top:1px solid var(--line)}
   <div class="wrap nav">
     <a href="#top" class="logo">GameEnglish<span>.</span>AI</a>
     <nav aria-label="주요 메뉴">
-      <a href="#services">서비스</a><a href="#work">포트폴리오</a><a href="#process">진행 방식</a><a href="#contact">AI 상담</a>
+      <a href="#services">서비스</a><a href="#work">포트폴리오</a><a href="#books">교재 샘플</a><a href="#process">진행 방식</a><a href="#contact">AI 상담</a>
     </nav>
     <a href="#contact" class="btn cta">AI 상담 시작</a>
   </div>
@@ -196,6 +211,7 @@ footer{border-top:1px solid var(--line)}
       <div class="card"><div class="num">02</div><h3>AI 에이전트 개발</h3><p>문항·교재 자동 생성, 학습 도우미 챗봇, 학원 상담·관리 자동화처럼 현장에서 바로 쓰는 AI 에이전트를 만듭니다.</p></div>
       <div class="card"><div class="num">03</div><h3>MVP 제작·출시</h3><p>웹 서비스, 결제 연동, 랜딩페이지까지 시장에 내놓을 수 있는 첫 버전을 빠르게 만들어 배포합니다.</p></div>
       <div class="card"><div class="num">04</div><h3>AI 영상 콘텐츠 제작</h3><p>캐릭터 기획부터 숏폼 시리즈 제작까지. 일관된 캐릭터로 매일 올릴 수 있는 영상 제작 체계를 만들어 드립니다.</p></div>
+      <div class="card"><div class="num">05</div><h3>AI 교재·그림책 제작</h3><p>학원 브랜드 워크북, 레벨별 교재 시리즈, 캐릭터 그림책까지. 주제만 정하면 자동화 엔진으로 빠르게 대량 제작합니다. <a href="#books">샘플 보기</a></p></div>
     </div>
   </div>
 </section>
@@ -273,6 +289,41 @@ footer{border-top:1px solid var(--line)}
         </div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<section id="books" class="band">
+  <div class="wrap sec">
+    <p class="eyebrow" style="color:var(--accent);margin-bottom:16px">// AI TEXTBOOK ENGINE</p>
+    <h2>주제 하나로 20페이지 워크북이 나옵니다</h2>
+    <p class="sub">Word Chef 교재는 자체 개발한 자동화 엔진으로 만듭니다. 주제와 단어 목록을 넣으면 단어 학습부터 파닉스, 문장, 읽기·쓰기까지 레벨에 맞춘 워크북이 자동으로 조판되고, 오류 검수까지 거칩니다. 학원·출판사 교재도 같은 방식으로 만들어 드립니다.</p>
+
+    <div class="bstats">
+      <div><b>29종+</b><span>레벨별(L1~L3) 워크북</span></div>
+      <div><b>20p</b><span>주제 1개당 자동 조판</span></div>
+      <div><b>그림책</b><span>캐릭터 삽화 동화책 제작</span></div>
+    </div>
+
+    <h3 class="bh">캐릭터 그림책 · Pancake Morning</h3>
+    <div class="gal gal-book">
+      <figure class="g-cover"><img src="/img/pk_cover.jpg" alt="Pancake Morning 그림책 표지 — 셰프 신디와 너구리 록키가 팬케이크를 들고 있음" loading="lazy" width="640" height="904"><figcaption>표지</figcaption></figure>
+      <div class="g-col">
+        <figure><img src="/img/pk_p10.jpg" alt="그림책 본문 — 신디가 팬케이크를 뒤집는 장면" loading="lazy" width="900" height="506"><figcaption>본문 · 영어 문장 + 한글 해석</figcaption></figure>
+        <figure><img src="/img/pk_p15.jpg" alt="그림책 본문 — 신디와 록키가 함께 아침을 먹고 만족한 장면" loading="lazy" width="900" height="506"><figcaption>두 캐릭터가 끝까지 같은 모습으로 유지</figcaption></figure>
+      </div>
+    </div>
+
+    <h3 class="bh">레벨별 워크북 · L3 시리즈</h3>
+    <div class="gal gal-ws">
+      <figure><img src="/img/cov_SchoolLife.jpg" alt="워크북 표지 — School Life" loading="lazy" width="579" height="819"><figcaption>School Life</figcaption></figure>
+      <figure><img src="/img/cov_FoodandCooking.jpg" alt="워크북 표지 — Food and Cooking" loading="lazy" width="579" height="819"><figcaption>Food &amp; Cooking</figcaption></figure>
+      <figure><img src="/img/cov_AnimalsandHabitats.jpg" alt="워크북 표지 — Animals and Habitats" loading="lazy" width="579" height="819"><figcaption>Animals &amp; Habitats</figcaption></figure>
+      <figure><img src="/img/cov_WeatherandSeasons.jpg" alt="워크북 표지 — Weather and Seasons" loading="lazy" width="579" height="819"><figcaption>Weather &amp; Seasons</figcaption></figure>
+      <figure><img src="/img/ws_p3.jpg" alt="워크북 속지 — 그림 단어 20개 학습" loading="lazy" width="579" height="819"><figcaption>단어 입력</figcaption></figure>
+      <figure><img src="/img/ws_p9.jpg" alt="워크북 속지 — 파닉스 매직 e 활동" loading="lazy" width="579" height="819"><figcaption>파닉스 심화</figcaption></figure>
+      <figure><img src="/img/ws_p12.jpg" alt="워크북 속지 — 사이트워드 활동" loading="lazy" width="579" height="819"><figcaption>사이트워드</figcaption></figure>
+      <figure class="g-more"><div><b>학원 이름과 로고로</b><span>우리 학원 전용 교재도 같은 품질로 만들어 드립니다.</span><a href="#contact" class="btn btn-primary">교재 제작 물어보기</a></div></figure>
     </div>
   </div>
 </section>
