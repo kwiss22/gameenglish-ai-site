@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://gameenglish-ai-site.vercel.app/sitemap.xml
