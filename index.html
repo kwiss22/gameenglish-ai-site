@@ -133,6 +133,11 @@ section{scroll-margin-top:72px}
 .g-more b{display:block;font-size:18px}.g-more span{display:block;margin:8px 0 16px;font-size:14px;line-height:1.6;color:var(--ink-2)}
 @media (max-width:760px){.gal-ws{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
+.step-link{text-decoration:none;color:var(--ink);border-color:var(--accent)!important}
+.step-link:hover{background:#E8EDFF!important}
+.wc-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.btn-line{background:#fff;color:var(--ink);border-color:var(--ink)}.btn-line:hover{color:var(--ink);background:var(--paper)}
+
 /* process */
 .process{background:var(--dark);color:#fff}
 .process h2{color:#fff}
@@ -253,12 +258,16 @@ footer{border-top:1px solid var(--line)}
         <div class="body">
           <div class="tag">대표 사례 · 교육 IP · 원소스 멀티유즈</div>
           <h3>Word Chef — 캐릭터 하나로 영상·전자책·게임·종이책까지</h3>
-          <p>신디·록키·빅터 세 캐릭터와 하나의 세계관으로 모든 교육 콘텐츠를 연결했습니다. 영상에서 배운 표현을 전자책으로 복습하고, 게임으로 놀며 익히고, 종이책으로 소장하는 구조입니다. 숏폼 영상 수백 편과 워크북 전자책을 자동화 파이프라인으로 제작합니다.</p>
+          <p>신디·록키·빅터 세 캐릭터와 하나의 세계관으로 모든 교육 콘텐츠를 연결했습니다. 영상에서 배운 표현을 전자책으로 복습하고, 게임으로 놀며 익히고, 종이책으로 소장하는 구조입니다. 숏폼 영상 수백 편과 워크북 전자책을 자동화 파이프라인으로 제작하고, 같은 캐릭터로 만든 단어 퍼즐 게임 4종을 운영합니다.</p>
           <div class="chain">
             <div class="step"><b>숏폼 영상</b><span class="live">운영 중</span></div><span class="arr" aria-hidden="true">→</span>
             <div class="step"><b>워크북 전자책</b><span class="live">판매 중</span></div><span class="arr" aria-hidden="true">→</span>
-            <div class="step"><b>학습 게임</b><span>개발 중</span></div><span class="arr" aria-hidden="true">→</span>
+            <a class="step step-link" href="https://wordchef-hub.vercel.app/" target="_blank" rel="noopener"><b>학습 게임</b><span class="live">플레이하기 →</span></a><span class="arr" aria-hidden="true">→</span>
             <div class="step"><b>종이책</b><span>준비 중</span></div>
+          </div>
+          <div class="wc-links">
+            <a href="https://wordchef-hub.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary">Word Chef 게임 해보기</a>
+            <a href="#books" class="btn btn-line">교재 샘플 보기</a>
           </div>
         </div>
       </article>
