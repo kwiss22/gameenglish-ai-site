@@ -100,6 +100,24 @@ section{scroll-margin-top:72px}
 .chain .step b{display:block;font-size:15px}.chain .step span{font-size:13px;color:var(--ink-3)}.chain .step span.live{color:var(--accent)}
 .chain .arr{font-size:18px;color:#8A8A8A}
 
+/* videos */
+.vids{display:flex;flex-wrap:wrap;gap:20px;margin-top:40px;align-items:flex-start}
+.vid{margin:0;min-width:0}
+.vid-wide{flex:999 1 520px}
+.vid-tall{flex:1 1 240px;max-width:320px}
+.yt{position:relative;display:block;width:100%;padding:0;border:0;border-radius:12px;overflow:hidden;background:#000;cursor:pointer}
+.vid-wide .yt{aspect-ratio:16/9}
+.vid-tall .yt{aspect-ratio:9/16}
+.yt img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92;transition:opacity .2s}
+.yt:hover img{opacity:1}
+.yt .play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:rgba(18,18,18,.82)}
+.yt .play::after{content:"";position:absolute;left:27px;top:14px;border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent #fff}
+.yt:hover .play{background:#E62117}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid figcaption{margin-top:12px}
+.vid figcaption b{display:block;font-size:17px}
+.vid figcaption span{display:block;margin-top:4px;font-size:14px;line-height:1.6;color:var(--ink-3)}
+
 /* books */
 .bstats{display:flex;flex-wrap:wrap;gap:32px;margin-top:36px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .bstats>div{flex:1 1 160px}.bstats b{display:block;font-family:var(--display);font-size:32px}.bstats span{font-size:15px;color:var(--ink-3)}
@@ -167,7 +185,7 @@ footer{border-top:1px solid var(--line)}
   <div class="wrap nav">
     <a href="#top" class="logo">GameEnglish<span>.</span>AI</a>
     <nav aria-label="주요 메뉴">
-      <a href="#services">서비스</a><a href="#work">포트폴리오</a><a href="#books">교재 샘플</a><a href="#process">진행 방식</a><a href="#contact">AI 상담</a>
+      <a href="#services">서비스</a><a href="#work">포트폴리오</a><a href="#videos">AI 영상</a><a href="#books">교재 샘플</a><a href="#process">진행 방식</a><a href="#contact">AI 상담</a>
     </nav>
     <a href="#contact" class="btn cta">AI 상담 시작</a>
   </div>
@@ -290,6 +308,30 @@ footer{border-top:1px solid var(--line)}
         </div>
       </article>
 
+    </div>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="wrap sec">
+    <p class="eyebrow" style="color:var(--accent);margin-bottom:16px">// AI VIDEO</p>
+    <h2>AI로 만든 영상, 직접 보세요</h2>
+    <p class="sub">캐릭터 설정부터 음악, 영상, 편집까지 AI로 제작합니다. 같은 캐릭터를 수십 편 동안 같은 모습으로 유지하는 것이 핵심입니다.</p>
+    <div class="vids">
+      <figure class="vid vid-wide">
+        <button type="button" class="yt" data-id="veKWO-kn15U" data-title="[MV] 화랑 (HWARANG) - 새로운 여름 (A New Summer)" aria-label="뮤직비디오 재생: 화랑 - 새로운 여름">
+          <img src="https://i.ytimg.com/vi/veKWO-kn15U/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <span class="play" aria-hidden="true"></span>
+        </button>
+        <figcaption><b>AI 아이돌 그룹 뮤직비디오</b><span>kdate · 화랑(HWARANG) "새로운 여름" — 멤버 캐릭터, 음악, 뮤직비디오를 모두 AI로 제작</span></figcaption>
+      </figure>
+      <figure class="vid vid-tall">
+        <button type="button" class="yt" data-id="Edb0gXeAQVs" data-title="MAKE or DO? One question tells you which." aria-label="쇼츠 재생: MAKE or DO">
+          <img src="https://i.ytimg.com/vi/Edb0gXeAQVs/hqdefault.jpg" alt="" loading="lazy" width="480" height="360">
+          <span class="play" aria-hidden="true"></span>
+        </button>
+        <figcaption><b>교육용 캐릭터 숏폼</b><span>Word Chef · 문법 비교 시리즈 "MAKE or DO?" — 세 캐릭터의 대화로 헷갈리는 표현을 설명</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -457,6 +499,21 @@ footer{border-top:1px solid var(--line)}
     if (step > TASKS[task].steps.length + 4) step = 0;
     render();
   }, 900);
+})();
+
+/* ---------- click-to-load YouTube ---------- */
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll('.yt'), function (b) {
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(b.dataset.id) + '?autoplay=1&rel=0&playsinline=1';
+      f.title = b.dataset.title || 'YouTube video';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      b.textContent = '';
+      b.appendChild(f);
+    }, { once: true });
+  });
 })();
 
 /* ---------- AI consultation chat ---------- */
